@@ -1,65 +1,51 @@
 import React from 'react';
-import Docker from './Docker.js';
 import Table from './Table.js';
 import './App.css';
 
-const HOST = 'localhost';
-const PORT = 9996;
-const API_VERSION = '1.41';
-
-const monitorConfig = {
-    host       : HOST,
-    port       : PORT,
-    apiVersion : API_VERSION,
-};
+const TICK_INTERVAL = 1000;
 
 class App extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            data: {
-                '_monitor' : monitorConfig,
-            }
-        };
+            data : {},
+            timerID : null
+        }
     }
 
-    getData(path) {
-        // Do nothing if something is already there
-        if (this.state.data[path]) return;
+    tick() {
+        const docker = this.props.docker;
 
-        const component = this;
-        const docker = Docker(HOST, PORT, API_VERSION);
 
-        docker(path,
-            function(response) {              
-                component.setState(
-                    function(state, props) {
-                        const newData = state.data || {};
-                        newData[path] = response;
-                        return newData;
-                    }
-                );
-            }
-        );
+
+        // engine.read('ping');
+        // engine.read('version');
+        // engine.read('info');
+        // engine.read('containers');
+        // engine.read('images');
+        // engine.read('networks');
+        // engine.read('volumes');
+        // engine.read('swarm');
+        // engine.read('nodes');
+        // engine.read('services');
+        // engine.read('tasks');
+        // engine.read('secrets');
+        // engine.read('configs');
+        // engine.read('plugins');
+        // engine.read('events');
+    }
+
+    copy(key, value) {
+        this.setState((state, props) => {
+            const newData = state.data;
+            newData[key] = value;
+            return {...state, data: newData};
+        });
     }
 
     componentDidMount() {
-        this.getData('/_ping');
-        this.getData('/version');
-        this.getData('/info');
-        this.getData('/containers/json');
-        this.getData('/images/json');
-        this.getData('/networks');
-        this.getData('/volumes');
-        this.getData('/swarm');
-        this.getData('/nodes');
-        this.getData('/services');
-        this.getData('/tasks');
-        this.getData('/secrets');
-        this.getData('/configs');
-        this.getData('/plugins');
-        this.getData('/events');
+        this.props.docker.subscribe((key, value) => this.copy(key, value));
     }
 
     toRows(path) {
@@ -67,8 +53,6 @@ class App extends React.Component {
         // Convert from dict to array of [key,value] tuples
         return data ? Object.keys(data).map(key => [key, data[key]]) : [];
     }
-
-    
 
     PathTable(path) {
         return (
@@ -80,20 +64,23 @@ class App extends React.Component {
         return (
             <div className="App">
                 <h1>Docker Engine info</h1>
-                { this.PathTable('_monitor') }
-                { this.PathTable('/_ping') }
-                { this.PathTable('/version') }
-                { this.PathTable('/info') }
-                { this.PathTable('/containers/json') }
-                { this.PathTable('/images/json') }
-                { this.PathTable('/networks') }
-                { this.PathTable('/swarm') }
-                { this.PathTable('/services') }
-                { this.PathTable('/tasks') }
-                { this.PathTable('/secrets') }
-                { this.PathTable('/configs') }
-                { this.PathTable('/plugins') }
-                { this.PathTable('/events') }
+                { this.PathTable('monitor') }
+                { this.PathTable('ping') }
+                { this.PathTable('version') }
+                { this.PathTable('info') }
+                { this.PathTable('containers') }
+                { this.PathTable('images') }
+                { this.PathTable('networks') }
+                { this.PathTable('swarm') }
+                { this.PathTable('services') }
+                { this.PathTable('tasks') }
+                { this.PathTable('secrets') }
+                { this.PathTable('configs') }
+                { this.PathTable('plugins') }
+                { 
+                    // '/events' uses HTTP streaming
+                    this.PathTable('events')
+                }
             </div>
         );
     }

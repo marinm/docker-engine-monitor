@@ -11,9 +11,7 @@ function Docker(host, port, apiVersion) {
     };
 
     function getterFunction(path) {
-        return function(callback) {
-            get(path, callback);
-        }
+        return (receiver) => get(path, receiver);
     }
 
     return {

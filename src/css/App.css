@@ -10,27 +10,6 @@
     box-shadow: 0 0 0.2em 0.2em #eee;
 }
 
-table {
-    border-collapse: collapse;
-    margin: 2em auto;
-    font-size: 0.8rem;
-}
-
-tbody {
-    border-top: 3px solid #AAAAAA;
-}
-
-td, th {
-    padding: 0.4em;
-    border-bottom: 1px solid #EEEEEE;
-    width: 20em;
-}
-
-th.table-title {
-    text-align: left;
-    background-color: #EEEEEE;
-}
-
 .status-dot {
     display: inline-block;
     width: 0.5em;

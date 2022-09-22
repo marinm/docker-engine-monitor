@@ -1,16 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import useCheckTicker from './useCheckTicker.js';
 
 export default
 function StatusDot(props) {
 
     const {check, ms} = props;
 
-    const [status, setStatus] = useState(null);
-
-    useEffect(function() {
-        const timerID = setInterval( () => check( result => setStatus(result) ), ms );
-        return () => clearInterval(timerID);
-    });
+    const status = useCheckTicker(check, ms);
 
     function className() {
         return (status === true)

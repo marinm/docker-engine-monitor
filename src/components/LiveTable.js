@@ -8,6 +8,8 @@ function LiveTable(props) {
 
     const rows = useCheckTicker(check, ms);
 
+    console.log(`Render LiveTable: ${title}`);
+
     return (
         <Table title={title} rows={rows} />
     );

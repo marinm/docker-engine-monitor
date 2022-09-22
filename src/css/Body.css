@@ -16,10 +16,6 @@
 }
 
 .Body .containers-panel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: gray;
 }
 
 .Body .networks-panel {

@@ -7,3 +7,38 @@
     overflow-x: hidden;
     overflow-y: scroll;
 }
+
+.Body .panel {
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.Body .containers-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+}
+
+.Body .networks-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+}
+
+.Body .volumes-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+}
+
+.Body .images-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+}

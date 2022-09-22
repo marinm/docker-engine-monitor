@@ -15,4 +15,4 @@ function useCheckTicker(check, ms) {
     });
 
     return data;
-}
+};

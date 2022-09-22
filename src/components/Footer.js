@@ -3,7 +3,8 @@ import canReachDocker from '../data/can-reach-docker.js';
 import StatusDot from './StatusDot.js';
 
 export default
-function Footer() {
+function Footer(props) {
+    
     return (
         <div className="Footer">
             <div className="layout-box">

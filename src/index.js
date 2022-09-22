@@ -1,24 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import './css/index.css';
+import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-
-import config from './config.js';
-import Docker from './Docker.js';
-
-const {
-    HOST,
-    PORT,
-    API_VERSION,
-} = config;
-
-const docker = Docker(HOST, PORT, API_VERSION);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App docker={docker} />
+    <App />
   </React.StrictMode>
 );
 

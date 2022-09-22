@@ -1,0 +1,55 @@
+.App {
+    font-size: 1rem;
+    font-family: 'Verdana';
+    border: 1px solid #ccc;
+    width: 40em;
+    box-sizing: border-box;
+    margin: auto;
+    border-radius: 0.5em;
+    overflow: hidden;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 2em auto;
+    font-size: 0.8rem;
+}
+
+tbody {
+    border-top: 3px solid #AAAAAA;
+}
+
+td, th {
+    padding: 0.4em;
+    border-bottom: 1px solid #EEEEEE;
+    width: 20em;
+}
+
+th.table-title {
+    text-align: left;
+    background-color: #EEEEEE;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+}
+
+.status-dot.ok {
+    background-color: lime;
+}
+
+.status-dot.error {
+    background-color: Tomato;
+}
+
+.status-dot.unknown {
+    background-color: gray;
+}
+
+#status-box {
+    width: fit-content;
+    border: 1px solid #ddd;
+}

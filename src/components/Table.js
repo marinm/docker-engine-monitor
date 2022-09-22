@@ -32,15 +32,18 @@ function TBody(props) {
 
 export default
 function Table(props) {
+
+    const {title, rows} = props;
+
     return (
         <table>
             <thead>
                 <tr>
-                    <th className="table-title" colSpan="2">{props.title}</th>
+                    <th className="table-title" colSpan="2">{title}</th>
                 </tr>
             </thead>
             
-            <TBody rows={props.rows} />
+            <TBody rows={rows} />
         </table>
     );
 }

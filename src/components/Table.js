@@ -13,7 +13,7 @@ function Row(props) {
 
 function rowsArray(props) {
     const {rows} = props;
-    return rows?.map(entry => <Row key={entry[0]} entry={entry} />);
+    return rows?.map(entry => entry ? <Row key={entry[0]} entry={entry} /> : null);
 }
 
 function TBody(props) {

@@ -11,20 +11,21 @@
 
 .Header .layout-box {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     height: 100%;
 }
 
 .Header h1 {
     font-size: 1em;
-    margin: 0;
+    margin: 0 0 1em 0;
     padding: 0;
 }
 
 .Header ul.tab-bar {
+    font-size: 1rem;
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -43,6 +44,7 @@
     margin: 0;
     padding: 0.5em 1em;
     display: inline-block;
+    cursor: pointer;
 }
 
 .Header ul.tab-bar li:last-child {

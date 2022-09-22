@@ -6,10 +6,11 @@ function Header() {
         <div className="Header">
             <div className="layout-box">
                 <h1>Docker Engine Monitor</h1>
-
                 <ul className="tab-bar">
                     <li>Engine</li>
                     <li>Containers</li>
+                    <li>Networks</li>
+                    <li>Volumes</li>
                     <li>Images</li>
                 </ul>
             </div>

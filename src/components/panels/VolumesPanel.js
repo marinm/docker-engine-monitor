@@ -17,6 +17,7 @@ function toRowGroups(result) {
         title: "Volume",
         rows: [
             ['Name'       , volume['Name']],
+            ['Created at' , volume['CreatedAt']],
             ['Driver'     , volume['Driver']],
             ['Labels'     , volume['Labels']],
             ['Mountpoint' , volume['Mountpoint']],
@@ -27,7 +28,7 @@ function toRowGroups(result) {
 }
 
 export default
-function ContainersPanel(props) {
+function VolumesPanel(props) {
 
     const docker = Docker(HOST, PORT, API_VERSION);
 

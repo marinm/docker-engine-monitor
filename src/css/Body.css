@@ -19,10 +19,6 @@
 }
 
 .Body .networks-panel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: gray;
 }
 
 .Body .volumes-panel {

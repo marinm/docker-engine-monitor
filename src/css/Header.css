@@ -50,3 +50,7 @@
 .Header ul.tab-bar li:last-child {
     border-right: none;
 }
+
+.Header ul.tab-bar li.selected {
+    background-color: #e0e0e0;
+}

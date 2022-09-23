@@ -1,11 +1,11 @@
-import useCheckTicker from './useCheckTicker.js';
+import useTimeoutGet from './useTimeoutGet.js';
 
 export default
 function StatusDot(props) {
 
     const {check, ms} = props;
 
-    const status = useCheckTicker(check, ms);
+    const status = useTimeoutGet(check, ms);
 
     function className() {
         return (status === true)

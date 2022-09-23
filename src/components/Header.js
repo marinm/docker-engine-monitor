@@ -16,10 +16,6 @@ function Header(props) {
     return (
         <div className="Header">
             <div className="layout-box">
-                <div>
-                    <h1>Docker Engine Monitor</h1>
-                    <StatusDot check={canReachDocker} ms={1000} />
-                </div>
                 <ul className="tab-bar">
                     <li className={selected('monitor')}     onClick={() => setPanelName('monitor')} >Monitor</li>
                     <li className={selected('engine')}      onClick={() => setPanelName('engine')} >Engine</li>

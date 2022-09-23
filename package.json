@@ -1,5 +1,5 @@
 {
-  "name": "docker-engine-monitor",
+  "name": "docker-monitor",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

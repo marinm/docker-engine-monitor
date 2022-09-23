@@ -1,4 +1,4 @@
-# Docker Engine Monitor
+# Docker Monitor
 
 ## About
 
@@ -13,7 +13,7 @@ Why I made this:
 
 ## Setup
 
-Set the `HOST` and `PORT`.
+See `src/config.js`.
 
 ## Screenshot
 
@@ -33,8 +33,8 @@ Reference: [Docker Engine API (1.41)](https://docs.docker.com/engine/api/v1.41)
 |   | `GET`    | `/v1.41/containers/{id}/top`        |
 |   | `GET`    | `/v1.41/containers/{id}/logs`       |
 |   | `GET`    | `/v1.41/containers/{id}/changes`    |
-|   | `GET`    | `/v1.41/containers/{id}/export`     |
 |   | `GET`    | `/v1.41/containers/{id}/stats`      |
+| ✕ | `GET`    | `/v1.41/containers/{id}/export`     |
 | ✕ | `GET`    | `/v1.41/containers/{id}/attach/ws`  |
 | ✕ | `GET`    | `/v1.41/containers/{id}/archive`    |
 | ✕ | `HEAD`   | `/v1.41/containers/{id}/archive`    |

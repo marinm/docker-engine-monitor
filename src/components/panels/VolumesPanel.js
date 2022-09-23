@@ -19,9 +19,9 @@ function toRowGroups(result) {
             ['Name'       , volume['Name']],
             ['Created at' , volume['CreatedAt']],
             ['Driver'     , volume['Driver']],
-            ['Labels'     , volume['Labels']],
+            //['Labels'     , volume['Labels']],
             ['Mountpoint' , volume['Mountpoint']],
-            ['Options'    , volume['Options']],
+            //['Options'    , volume['Options']],
             ['scope'      , volume['Scope']],
         ],
     }));

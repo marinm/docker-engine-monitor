@@ -22,7 +22,7 @@ function toRowGroups(result) {
             [ 'Driver'       , container['Driver'] ],
             [ 'IPv6 Enabled' , container['EnableIPv6'] ],
             [ 'IPAM Driver'  , container['IPAM']['Driver'] ],
-            [ 'IPAM Options' , container['IPAM']['Options'] ],
+            //[ 'IPAM Options' , container['IPAM']['Options'] ],
             [ 'Config'       , '---' ],
             [ 'Internal'     , container['Internal'] ],
             [ 'Attachable'   , container['Attachable'] ],
@@ -32,7 +32,7 @@ function toRowGroups(result) {
 }
 
 export default
-function ContainersPanel(props) {
+function NetworksPanel(props) {
 
     const docker = Docker(HOST, PORT, API_VERSION);
 

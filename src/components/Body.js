@@ -1,4 +1,5 @@
 import '../css/Body.css';
+import MonitorPanel from './panels/MonitorPanel.js';
 import EnginePanel from './panels/EnginePanel.js';
 import ContainersPanel from './panels/ContainersPanel.js';
 import NetworksPanel from './panels/NetworksPanel.js';
@@ -13,11 +14,12 @@ function Body(props) {
     const [panelName] = panelSwitch;
 
     const components = {
-        'engine' : <EnginePanel />,
+        'monitor'    : <MonitorPanel />,
+        'engine'     : <EnginePanel />,
         'containers' : <ContainersPanel />,
-        'networks' : <NetworksPanel />,
-        'volumes' : <VolumesPanel />,
-        'images' : <ImagesPanel />,
+        'networks'   : <NetworksPanel />,
+        'volumes'    : <VolumesPanel />,
+        'images'     : <ImagesPanel />,
     };
 
     return (
@@ -25,4 +27,4 @@ function Body(props) {
             {components[panelName]}
         </div>
     )
-}
+};

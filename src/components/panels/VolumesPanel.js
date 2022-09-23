@@ -11,7 +11,6 @@ const {
 
 
 function toRowGroups(result) {
-    console.log(result);
     return result['Volumes']?.map(volume => ({
         key: volume['Name'],
         title: "Volume",

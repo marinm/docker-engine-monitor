@@ -11,7 +11,6 @@ const {
 
 
 function toRowGroups(result) {
-    console.log(result);
     return result?.map(image => ({
         key: image['Id'],
         title: "Image",

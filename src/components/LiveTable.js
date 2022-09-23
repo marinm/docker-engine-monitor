@@ -7,9 +7,7 @@ function LiveTable(props) {
     const {title, check, ms} = props;
 
     const rows = useTimeoutGet(check, ms);
-
-    console.log(`Render LiveTable: ${title}`);
-
+    
     return (
         <Table title={title} rows={rows} />
     );

@@ -21,6 +21,7 @@ function Header(props) {
                     <StatusDot check={canReachDocker} ms={1000} />
                 </div>
                 <ul className="tab-bar">
+                    <li className={selected('monitor')}     onClick={() => setPanelName('monitor')} >Monitor</li>
                     <li className={selected('engine')}      onClick={() => setPanelName('engine')} >Engine</li>
                     <li className={selected('containers')}  onClick={() => setPanelName('containers')} >Containers</li>
                     <li className={selected('networks')}    onClick={() => setPanelName('networks')} >Networks</li>

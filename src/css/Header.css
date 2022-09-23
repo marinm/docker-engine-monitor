@@ -19,9 +19,30 @@
 }
 
 .Header h1 {
+    display: inline-block;
     font-size: 1em;
     margin: 0 0 1em 0;
     padding: 0;
+}
+
+.Header .status-dot {
+    display: inline-block;
+    font-size: 1em;
+    line-height: 1em;
+    margin-left: 0.5em;
+    color: gray;
+}
+
+.Header .status-dot.ok {
+    color: lime;
+}
+
+.Header .status-dot.error {
+    color: Tomato;
+}
+
+.Header .status-dot.unknown {
+    color: gray;
 }
 
 .Header ul.tab-bar {

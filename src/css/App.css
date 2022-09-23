@@ -9,27 +9,3 @@
     overflow: hidden;
     box-shadow: 0 0 0.4em 0.2em #ddd;
 }
-
-.status-dot {
-    display: inline-block;
-    width: 0.5em;
-    height: 0.5em;
-    border-radius: 50%;
-}
-
-.status-dot.ok {
-    background-color: lime;
-}
-
-.status-dot.error {
-    background-color: Tomato;
-}
-
-.status-dot.unknown {
-    background-color: gray;
-}
-
-#status-box {
-    width: fit-content;
-    border: 1px solid #ddd;
-}

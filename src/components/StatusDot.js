@@ -16,10 +16,6 @@ function StatusDot(props) {
     }
 
     return (
-        <>
-            <div className={"status-dot " + className()}></div>
-            { status ? 'Engine is online' : 'Is the engine API online?'}
-        </>
-        
+        <span className={"status-dot " + className()}>&#x2022;</span>
     );
 }

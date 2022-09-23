@@ -1,7 +1,6 @@
 import '../css/App.css';
 import Header from './Header.js';
 import Body from './Body.js';
-import Footer from './Footer.js';
 import {useState} from 'react';
 
 function App() {
@@ -12,7 +11,6 @@ function App() {
         <div className="App">
             <Header panelSwitch={[panelName, setPanelName]} />
             <Body panelSwitch={[panelName, setPanelName]} />
-            <Footer panelSwitch={[panelName, setPanelName]} />
         </div>
     );
 }

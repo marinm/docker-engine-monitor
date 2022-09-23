@@ -6,7 +6,7 @@ function Row(props) {
     return (
         <tr>
             <td>{String(entry[0])}</td>
-            <td>{String(entry[1])}</td>
+            <td>{entry[1]}</td>
         </tr>
     );
 }

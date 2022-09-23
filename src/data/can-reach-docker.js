@@ -11,6 +11,6 @@ export default
 function canReachDocker(callback) {
     const docker = Docker(HOST, PORT, API_VERSION);
 
-    docker.ping( (result) => callback(result.result === 'OK' ? true : false));
+    docker.ping( (result) => callback(result?.result === 'OK' ? true : false));
     return;
 }

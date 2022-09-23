@@ -26,3 +26,22 @@
 
 .Body .images-panel {
 }
+
+.Body .status-dot {
+    display: inline-block;
+    font-size: 1em;
+    line-height: 1em;
+    color: gray;
+}
+
+.Body .status-dot.ok {
+    color: lime;
+}
+
+.Body .status-dot.error {
+    color: Tomato;
+}
+
+.Body .status-dot.unknown {
+    color: gray;
+}

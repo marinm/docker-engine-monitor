@@ -7,7 +7,7 @@ function Docker(host, port, apiVersion) {
         fetch(`${urlBase}${path}`)
         .then(response => response.json())
         .then(data => receiver(data))
-        .catch(error => receiver(error));
+        .catch(error => receiver(null));
     };
 
     function getterFunction(path) {

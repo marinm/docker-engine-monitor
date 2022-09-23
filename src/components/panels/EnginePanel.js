@@ -1,6 +1,8 @@
 import LiveTable from '../LiveTable.js';
 import Docker from '../../data/Docker.js';
 import config from '../../config.js';
+import canReachDocker from '../../data/can-reach-docker.js';
+import StatusDot from '../StatusDot.js';
 
 const {
     HOST,
@@ -23,6 +25,7 @@ function EnginePanel(props) {
             <LiveTable title="Platform" ms={FETCH_RATE_FOR_VERSION} check={
                 function(callback) {
                     docker.version(result => callback([
+                        [ 'Docker HTTP API'       , <StatusDot check={canReachDocker} ms={1000} />],
                         [ 'Platform Name'         , result['Platform']?.['Name'] ],
                         [ 'Docker Engine version' , result['Version'] ],
                         [ 'API Version'           , result['ApiVersion'] ],

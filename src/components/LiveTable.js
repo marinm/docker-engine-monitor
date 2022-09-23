@@ -1,12 +1,12 @@
 import Table from './Table.js';
-import useCheckTicker from './useCheckTicker.js';
+import useTimeoutGet from './useTimeoutGet.js';
 
 export default
 function LiveTable(props) {
 
     const {title, check, ms} = props;
 
-    const rows = useCheckTicker(check, ms);
+    const rows = useTimeoutGet(check, ms);
 
     console.log(`Render LiveTable: ${title}`);
 

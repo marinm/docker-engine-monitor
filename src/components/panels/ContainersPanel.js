@@ -32,7 +32,6 @@ function ContainersPanel(props) {
 
     function check(callback) {
         docker.containers(function(result) {
-            console.log(toRowGroups(result));
             callback(toRowGroups(result))
         });
     }

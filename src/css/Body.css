@@ -22,10 +22,6 @@
 }
 
 .Body .volumes-panel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: gray;
 }
 
 .Body .images-panel {

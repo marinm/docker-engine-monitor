@@ -1,26 +1,4 @@
-import React, {useState, useEffect} from 'react';
 import '../css/Table.css';
-
-function Row(props) {
-    const {entry} = props;
-    return (
-        <tr>
-            <td>{String(entry[0])}</td>
-            <td>{entry[1]}</td>
-        </tr>
-    );
-}
-
-function rowsArray(props) {
-    const {rows} = props;
-    return rows?.map(entry => entry ? <Row key={entry[0]} entry={entry} /> : null);
-}
-
-function TBody(props) {
-    return (
-        <tbody>{ rowsArray(props) }</tbody>
-    );
-}
 
 export default
 function Table(props) {
@@ -35,7 +13,16 @@ function Table(props) {
                 </tr>
             </thead>
             
-            <TBody rows={rows} />
+            <tbody>
+                {
+                    rows?.map(entry =>
+                        <tr key={String(entry[0])}>
+                            <td>{String(entry[0])}</td>
+                            <td>{entry[1]}</td>
+                        </tr>
+                    )
+                }
+            </tbody>
         </table>
     );
 }

@@ -1,6 +1,4 @@
 import '../css/Header.css';
-import canReachDocker from '../data/can-reach-docker.js';
-import StatusDot from './StatusDot.js';
 
 export default
 function Header(props) {
@@ -17,12 +15,23 @@ function Header(props) {
         <div className="Header">
             <div className="layout-box">
                 <ul className="tab-bar">
-                    <li className={selected('monitor')}     onClick={() => setPanelName('monitor')} >Monitor</li>
-                    <li className={selected('engine')}      onClick={() => setPanelName('engine')} >Engine</li>
-                    <li className={selected('containers')}  onClick={() => setPanelName('containers')} >Containers</li>
-                    <li className={selected('networks')}    onClick={() => setPanelName('networks')} >Networks</li>
-                    <li className={selected('volumes')}     onClick={() => setPanelName('volumes')} >Volumes</li>
-                    <li className={selected('images')}      onClick={() => setPanelName('images')} >Images</li>
+                    {
+                        [
+                            ['monitor'    , 'Monitor'],
+                            ['engine'     , 'Engine'],
+                            ['containers' , 'Containers'],
+                            ['networks'   , 'Networks'],
+                            ['volumes'    , 'Volumes'],
+                            ['images'     , 'Images']
+                        ].map(
+                            ([name, label]) =>
+                                <li
+                                    key={name}
+                                    className={selected(name)}
+                                    onClick={() => setPanelName(name)}
+                                >{label}</li>
+                        )
+                    }
                 </ul>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import LiveTables from '../LiveTables.js';
 import Docker from '../../data/Docker.js';
 import config from '../../config.js';
+import tables from '../tables.js';
 
 const {
     HOST,
@@ -9,36 +10,18 @@ const {
     FETCH_RATE_FOR_CONTAINERS
 } = config;
 
-
-function toRowGroups(result) {
-    return result.map(container => ({
-        key: container['Id'],
-        title: "Container",
-        rows: [
-            [ 'ID'       , container['Id'] ],
-            [ 'Image'    , container['Image'] ],
-            [ 'Command'  , container['Command'] ],
-            [ 'Created'  , container['Created'] ],
-            [ 'State'    , container['State'] ],
-            [ 'Status'   , container['Status'] ],
-        ],
-    }));
-}
+const {
+    get_containers_tables
+} = tables;
 
 export default
 function ContainersPanel(props) {
 
     const docker = Docker(HOST, PORT, API_VERSION);
 
-    function check(callback) {
-        docker.containers(function(result) {
-            callback(toRowGroups(result))
-        });
-    }
-
     return (
         <div className="panel containers-panel">
-            <LiveTables check={check} ms={FETCH_RATE_FOR_CONTAINERS}  />
+            <LiveTables check={get_containers_tables(docker)} ms={FETCH_RATE_FOR_CONTAINERS}  />
         </div>
     );
 };

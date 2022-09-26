@@ -54,6 +54,71 @@ Reference: [Docker Engine API (1.41)](https://docs.docker.com/engine/api/v1.41)
 | ✕ | `PUT`    | `/v1.41/containers/{id}/archive`    |
 | ✕ | `DELETE` | `/v1.41/containers/{id}/`           |
 
+The complete list of endpoints is shown below to show readers the complexity of
+the Docker API.
+
+```
+[x] in use or will likely be used
+[ ] outside scope of project
+
+
+Images
+
+[x]  GET    /v1.41/images/json
+[ ]  POST   /v1.41/build
+[ ]  POST   /v1.41/build/prune
+[ ]  POST   /v1.41/images/create
+[x]  GET    /v1.41/images/{name}/json
+[ ]  GET    /v1.41/images/{name}/history
+[ ]  POST   /v1.41/images/{name}/push
+[ ]  POST   /v1.41/images/{name}/tag
+[ ]  DELETE /v1.41/images/{name}
+[ ]  GET    /v1.41/images/search
+[ ]  POST   /v1.41/images/prune
+[ ]  POST   /v1.41/commit
+[ ]  GET    /v1.41/images/{name}/get
+[ ]  GET    /v1.41/images/get
+[ ]  POST   /v1.41/images/load
+
+Networks
+
+[x]  GET    /v1.41/networks
+[x]  GET    /v1.41/networks/{id}
+[ ]  DELETE /v1.41/networks/{id}
+[ ]  POST   /v1.41/networks/create
+[ ]  POST   /v1.41/networks/{id}/connect
+[ ]  POST   /v1.41/networks/{id}/disconnect
+[ ]  POST   /v1.41/networks/prune
+
+Volumes
+
+[x]  GET    /v1.41/volumes
+[ ]  POST   /v1.41/volumes/create
+[x]  GET    /v1.41/volumes/{name}
+[ ]  DELETE /v1.41/volumes/{name}
+[ ]  POST   /v1.41/volumes/prune
+
+System
+
+[ ]  POST   /v1.41/auth
+[x]  GET    /v1.41/info
+[x]  GET    /v1.41/version
+[x]  GET    /v1.41/_ping
+[ ]  HEAD   /v1.41/_ping
+[x]  GET    /v1.41/events
+[ ]  GET    /v1.41/system/df
+
+Distribution
+
+[ ]  GET    /v1.41/distribution/{name}/json
+
+Session
+
+[ ]  POST   /v1.41/session
+```
+
+
+
 ## Complimentary watermelon emoji
 
 🍉

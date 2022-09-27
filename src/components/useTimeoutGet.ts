@@ -1,8 +1,13 @@
 import {useState, useEffect} from 'react';
 
+
+type Receiver = (data: any) => void;
+type Getter = (callback :Receiver) => void;
+
+
 export default
-function useTimeoutGet(get, ms) {
-    // Infinite re-render loop that fetches data every 'ms' milliseconds.
+function useTimeoutGet(get :Getter, ms :number) :any {
+    // Re-render loop that fetches data every 'ms' milliseconds.
 
     const [data, setData] = useState(null);
 

@@ -1,4 +1,4 @@
-import Table from '../Table.js';
+import Table from '../Table.tsx';
 import config from '../../config.js';
 import tables from '../tables.js';
 

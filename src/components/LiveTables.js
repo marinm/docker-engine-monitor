@@ -1,5 +1,5 @@
-import Table from './Table.js';
-import useTimeoutGet from './useTimeoutGet.js';
+import Table from './Table.tsx';
+import useTimeoutGet from './useTimeoutGet.ts';
 
 export default
 function LiveTable(props) {

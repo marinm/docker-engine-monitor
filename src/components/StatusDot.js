@@ -1,4 +1,4 @@
-import useTimeoutGet from './useTimeoutGet.js';
+import useTimeoutGet from './useTimeoutGet.ts';
 
 export default
 function StatusDot(props) {

@@ -1,18 +1,21 @@
+import * as React from 'react';
 import '../css/Table.css';
 
+type Props = {
+    title :string;
+    rows  :[string,string][];
+};
+
 export default
-function Table(props) {
-
-    const {title, rows} = props;
-
+function Table({title, rows} :Props) {
     return (
         <table>
             <thead>
                 <tr>
-                    <th className="table-title" colSpan="2">{title}</th>
+                    <th className="table-title" colSpan={2}>{title}</th>
                 </tr>
             </thead>
-            
+
             <tbody>
                 {
                     rows?.map(entry =>

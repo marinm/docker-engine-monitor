@@ -2,7 +2,7 @@ import * as React from 'react';
 import LiveTable from '../../common/LiveTable';
 import {Docker} from '../../../data/Docker';
 import config from '../../../config';
-import tables from '../../tables';
+import tables from '../../../adapters/table-mapper';
 
 const {
     get_platform_table,

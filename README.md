@@ -4,12 +4,6 @@
 
 Browser client to the [Docker Engine API](https://docs.docker.com/engine/api) (v1.41).
 
-Why I made this:
-- to learn React.js
-- to learn TypeScript
-- to learn Docker
-- to learn REST-ful API design
-
 ## Screenshot
 
 ![Screenshot](screenshot.png "Screenshot")

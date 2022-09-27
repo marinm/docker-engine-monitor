@@ -1,7 +1,8 @@
-import LiveTable from '../LiveTable.js';
-import Docker from '../../data/Docker.js';
-import config from '../../config.js';
-import tables from '../tables.js';
+import * as React from 'react';
+import LiveTable from '../LiveTable';
+import {Docker} from '../../data/Docker';
+import config from '../../config';
+import tables from '../tables';
 
 const {
     get_platform_table,
@@ -21,7 +22,7 @@ const {
 } = config;
 
 export default
-function EnginePanel(props) {
+function EnginePanel() {
 
     const docker = Docker(HOST, PORT, API_VERSION);
 

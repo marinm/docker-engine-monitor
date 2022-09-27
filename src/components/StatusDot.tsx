@@ -1,9 +1,16 @@
-import useTimeoutGet from './useTimeoutGet.ts';
+import * as React from 'react';
+import {useTimeoutGet} from './useTimeoutGet';
+
+type Receiver = (data: any) => void;
+type Getter = (callback :Receiver) => void;
+
+type Props = {
+    check :Getter;
+    ms    :number;
+}
 
 export default
-function StatusDot(props) {
-
-    const {check, ms} = props;
+function StatusDot({check, ms} :Props) {
 
     const status = useTimeoutGet(check, ms);
 

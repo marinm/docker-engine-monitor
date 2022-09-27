@@ -5,7 +5,6 @@ type Receiver = (data: any) => void;
 type Getter = (callback :Receiver) => void;
 
 
-export default
 function useTimeoutGet(get :Getter, ms :number) :any {
     // Re-render loop that fetches data every 'ms' milliseconds.
 
@@ -27,3 +26,5 @@ function useTimeoutGet(get :Getter, ms :number) :any {
 
     return data;
 };
+
+export { Receiver, Getter, useTimeoutGet };

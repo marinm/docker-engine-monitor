@@ -1,7 +1,8 @@
-import LiveTables from '../LiveTables.js';
-import Docker from '../../data/Docker.js';
-import config from '../../config.js';
-import tables from '../tables.js';
+import * as React from 'react';
+import LiveTables from '../LiveTables';
+import {Docker} from '../../data/Docker';
+import config from '../../config';
+import tables from '../tables';
 
 const {
     HOST,
@@ -15,7 +16,7 @@ const {
 } = tables;
 
 export default
-function ContainersPanel(props) {
+function ContainersPanel() {
 
     const docker = Docker(HOST, PORT, API_VERSION);
 

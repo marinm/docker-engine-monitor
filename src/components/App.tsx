@@ -1,11 +1,12 @@
+import * as React from 'react';
 import '../css/App.css';
-import Header from './Header.js';
-import Body from './Body.js';
+import Header from './Header';
+import Body from './Body';
 import {useState} from 'react';
 
 function App() {
 
-    const [panelName, setPanelName] = useState('engine');
+    const [panelName, setPanelName] :[string, any] = useState('engine');
 
     return (
         <div className="App">

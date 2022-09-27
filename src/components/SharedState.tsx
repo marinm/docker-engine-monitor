@@ -1,8 +1,8 @@
 export default
-function sharedState(init) {
+function sharedState(init :any) {
     let state = init;
     return {
         get: () => state,
-        set: (value) => state = value
+        set: (value :any) => state = value
     };
 };

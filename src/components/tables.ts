@@ -1,10 +1,9 @@
-import canReachDocker from '../data/can-reach-docker.js';
-import StatusDot from './StatusDot.js';
+import {Receiver, Getter} from './useTimeoutGet';
+import {DockerModel} from '../data/Docker';
 
-function get_platform_table(docker) {
-    return function(callback) {
-        docker.version(result => callback([
-            [ 'Docker HTTP API'       , <StatusDot check={canReachDocker} ms={1000} />],
+function get_platform_table(docker :DockerModel) :Getter {
+    return function(callback :Receiver) {
+        docker.version((result :any) => callback([
             [ 'Platform Name'         , result['Platform']?.['Name'] ],
             [ 'Docker Engine version' , result['Version'] ],
             [ 'API Version'           , result['ApiVersion'] ],
@@ -19,12 +18,12 @@ function get_platform_table(docker) {
     };
 }
 
-function get_docker_engine_table(docker) {
+function get_docker_engine_table(docker :DockerModel) :Getter {
     // The version.Components array is not necessarily guaranteed to be in the
     // same order...
     
-    return function(callback) {
-        docker.version(result => 
+    return function(callback :Receiver) {
+        docker.version((result :any) => 
             callback([
                 [ 'Version'          , result['Components']?.[0]['Version'] ],
                 [ 'API Version'      , result['Components']?.[0]['Details']['ApiVersion'] ],
@@ -41,9 +40,9 @@ function get_docker_engine_table(docker) {
     };
 }
 
-function get_containerd_table(docker) {
-    return function(callback) {
-        docker.version(result => 
+function get_containerd_table(docker :DockerModel) {
+    return function(callback :Receiver) {
+        docker.version((result :any) => 
             callback([
                 [ 'Version'          , result['Components']?.[1]['Version'] ],
                 [ 'Git Commit'       , result['Components']?.[1]['Details']['GitCommit'] ],
@@ -52,9 +51,9 @@ function get_containerd_table(docker) {
     };
 }
 
-function get_runc_table(docker) {
-    return function(callback) {
-        docker.version(result => 
+function get_runc_table(docker :DockerModel) {
+    return function(callback :Receiver) {
+        docker.version((result :any) => 
             callback([
                 [ 'Version'          , result['Components']?.[2]['Version'] ],
                 [ 'Git Commit'       , result['Components']?.[2]['Details']['GitCommit'] ],
@@ -63,9 +62,9 @@ function get_runc_table(docker) {
     };
 }
 
-function get_docker_init_table(docker) {
-    return function(callback) {
-        docker.version(result => 
+function get_docker_init_table(docker :DockerModel) {
+    return function(callback :Receiver) {
+        docker.version((result :any) => 
             callback([
                 [ 'Version'          , result['Components']?.[3]['Version'] ],
                 [ 'Git Commit'       , result['Components']?.[3]['Details']['GitCommit'] ],
@@ -74,9 +73,9 @@ function get_docker_init_table(docker) {
     };
 }
 
-function get_info_table(docker) {
-    return function(callback) {
-        docker.info(result => 
+function get_info_table(docker :DockerModel) {
+    return function(callback :Receiver) {
+        docker.info((result :any) => 
             callback([
                 [ 'Driver Status'          , '►' ],
                 [ 'Plugins'                , '►' ],
@@ -142,11 +141,11 @@ function get_info_table(docker) {
     };
 }
 
-function get_images_tables(docker) {
-    return function(callback) {
-        docker.images(result =>
+function get_images_tables(docker :DockerModel) {
+    return function(callback :Receiver) {
+        docker.images((result :any) =>
             callback(
-                 result?.map(image => ({
+                 result?.map((image :any) => ({
                     key: image['Id'],
                     title: "Image",
                     rows: [
@@ -164,15 +163,15 @@ function get_images_tables(docker) {
     }
 }
 
-function get_config_table(config) {
+function get_config_table(config :any) :[string,string][] {
     return Object.keys(config).map(key => [key, config[key]]);
 }
 
-function get_networks_tables(docker) {
-    return function (callback) {
-        docker.networks(result =>
+function get_networks_tables(docker :DockerModel) {
+    return function (callback :Receiver) {
+        docker.networks((result :any) :void =>
             callback(
-                result.map(container => ({
+                result.map((container :any) => ({
                     key: container['Id'],
                     title: "Network",
                     rows: [
@@ -195,11 +194,11 @@ function get_networks_tables(docker) {
     };
 }
 
-function get_volumes_tables(docker) {
-    return function (callback) {
-        docker.volumes(result =>
+function get_volumes_tables(docker :DockerModel) {
+    return function (callback :Receiver) {
+        docker.volumes((result :any) :void =>
             callback(
-                result['Volumes']?.map(volume => ({
+                result['Volumes']?.map((volume :any) => ({
                     key: volume['Name'],
                     title: "Volume",
                     rows: [
@@ -217,11 +216,11 @@ function get_volumes_tables(docker) {
     }
 }
 
-function get_containers_tables(docker) {
-    return function (callback) {
-        docker.containers(result =>
+function get_containers_tables(docker :DockerModel) {
+    return function (callback :Receiver) {
+        docker.containers((result :any) :void =>
             callback(
-                result.map(container => ({
+                result.map((container :any) => ({
                     key: container['Id'],
                     title: "Container",
                     rows: [

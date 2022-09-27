@@ -1,17 +1,36 @@
-export default
-function Docker(host, port, apiVersion) {
+import {Receiver, Getter} from '../components/useTimeoutGet.js';
+
+type DockerModel = {
+    ping       : Getter;
+    version    : Getter;
+    info       : Getter;
+    containers : Getter;
+    images     : Getter;
+    networks   : Getter;
+    volumes    : Getter;
+    swarm      : Getter;
+    nodes      : Getter;
+    services   : Getter;
+    tasks      : Getter;
+    secrets    : Getter;
+    configs    : Getter;
+    plugins    : Getter;
+    events     : Getter;
+};
+
+function Docker(host :string, port :string, apiVersion :string) :DockerModel  {
 
     const urlBase = `http://${host}:${port}/v${apiVersion}`;
 
-    function get(path, receiver) {
+    function get(path :string, receiver :Receiver) {
         fetch(`${urlBase}${path}`)
         .then(response => response.json())
-        .then(data => receiver(data))
+        .then((data :any)  => receiver(data))
         .catch(error => receiver(null));
     };
 
-    function getterFunction(path) {
-        return (receiver) => get(path, receiver);
+    function getterFunction(path :string) {
+        return (receiver :Receiver) => get(path, receiver);
     }
 
     return {
@@ -31,4 +50,6 @@ function Docker(host, port, apiVersion) {
         plugins    : getterFunction('/plugins'),
         events     : getterFunction('/events'),
     };
-};
+}
+
+export { DockerModel, Docker };

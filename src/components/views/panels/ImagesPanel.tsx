@@ -1,8 +1,8 @@
 import * as React from 'react';
-import LiveTables from '../LiveTables';
-import {Docker} from '../../data/Docker';
-import config from '../../config';
-import tables from '../tables';
+import LiveTables from '../../common/LiveTables';
+import {Docker} from '../../../data/Docker';
+import config from '../../../config';
+import tables from '../../tables';
 
 const {
     HOST,

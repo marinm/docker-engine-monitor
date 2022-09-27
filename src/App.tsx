@@ -1,7 +1,7 @@
 import * as React from 'react';
-import '../css/App.css';
-import Header from './Header';
-import Body from './Body';
+import './css/App.css';
+import Header from './components/views/Header';
+import Body from './components/views/Body';
 import {useState} from 'react';
 
 function App() {

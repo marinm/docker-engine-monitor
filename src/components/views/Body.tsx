@@ -1,4 +1,4 @@
-import '../css/Body.css';
+import '../../css/Body.css';
 import * as React from 'react';
 import MonitorPanel from './panels/MonitorPanel';
 import EnginePanel from './panels/EnginePanel';

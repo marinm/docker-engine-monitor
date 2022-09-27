@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Table from './Table';
-import {Getter, useTimeoutGet} from './useTimeoutGet';
+import {Getter, useTimeoutGet} from '../../hooks/useTimeoutGet';
 
 type Props = {
     title :string,

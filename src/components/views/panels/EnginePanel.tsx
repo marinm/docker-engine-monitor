@@ -1,8 +1,8 @@
 import * as React from 'react';
-import LiveTable from '../LiveTable';
-import {Docker} from '../../data/Docker';
-import config from '../../config';
-import tables from '../tables';
+import LiveTable from '../../common/LiveTable';
+import {Docker} from '../../../data/Docker';
+import config from '../../../config';
+import tables from '../../tables';
 
 const {
     get_platform_table,

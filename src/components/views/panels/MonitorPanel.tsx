@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Table from '../Table';
-import config from '../../config';
-import tables from '../tables';
+import Table from '../../common/Table';
+import config from '../../../config';
+import tables from '../../tables';
 
 const {
     get_config_table

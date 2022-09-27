@@ -1,9 +1,9 @@
-import {Receiver, Getter} from './useTimeoutGet';
+import {Receiver, Getter} from '../hooks/useTimeoutGet';
 import {DockerModel} from '../data/Docker';
 
 function get_platform_table(docker :DockerModel) :Getter {
     return function(callback :Receiver) {
-        docker.version((result :any) => callback([
+        docker.version((result :Record<string,any>) => callback([
             [ 'Platform Name'         , result['Platform']?.['Name'] ],
             [ 'Docker Engine version' , result['Version'] ],
             [ 'API Version'           , result['ApiVersion'] ],
@@ -23,7 +23,7 @@ function get_docker_engine_table(docker :DockerModel) :Getter {
     // same order...
     
     return function(callback :Receiver) {
-        docker.version((result :any) => 
+        docker.version((result :Record<string,any>) => 
             callback([
                 [ 'Version'          , result['Components']?.[0]['Version'] ],
                 [ 'API Version'      , result['Components']?.[0]['Details']['ApiVersion'] ],
@@ -42,7 +42,7 @@ function get_docker_engine_table(docker :DockerModel) :Getter {
 
 function get_containerd_table(docker :DockerModel) {
     return function(callback :Receiver) {
-        docker.version((result :any) => 
+        docker.version((result :Record<string,any>) => 
             callback([
                 [ 'Version'          , result['Components']?.[1]['Version'] ],
                 [ 'Git Commit'       , result['Components']?.[1]['Details']['GitCommit'] ],
@@ -53,7 +53,7 @@ function get_containerd_table(docker :DockerModel) {
 
 function get_runc_table(docker :DockerModel) {
     return function(callback :Receiver) {
-        docker.version((result :any) => 
+        docker.version((result :Record<string,any>) => 
             callback([
                 [ 'Version'          , result['Components']?.[2]['Version'] ],
                 [ 'Git Commit'       , result['Components']?.[2]['Details']['GitCommit'] ],
@@ -64,7 +64,7 @@ function get_runc_table(docker :DockerModel) {
 
 function get_docker_init_table(docker :DockerModel) {
     return function(callback :Receiver) {
-        docker.version((result :any) => 
+        docker.version((result :Record<string,any>) => 
             callback([
                 [ 'Version'          , result['Components']?.[3]['Version'] ],
                 [ 'Git Commit'       , result['Components']?.[3]['Details']['GitCommit'] ],
@@ -75,7 +75,7 @@ function get_docker_init_table(docker :DockerModel) {
 
 function get_info_table(docker :DockerModel) {
     return function(callback :Receiver) {
-        docker.info((result :any) => 
+        docker.info((result :Record<string,any>) => 
             callback([
                 [ 'Driver Status'          , '►' ],
                 [ 'Plugins'                , '►' ],
@@ -143,7 +143,7 @@ function get_info_table(docker :DockerModel) {
 
 function get_images_tables(docker :DockerModel) {
     return function(callback :Receiver) {
-        docker.images((result :any) =>
+        docker.images((result :Record<string,any>) =>
             callback(
                  result?.map((image :any) => ({
                     key: image['Id'],
@@ -169,7 +169,7 @@ function get_config_table(config :any) :[string,string][] {
 
 function get_networks_tables(docker :DockerModel) {
     return function (callback :Receiver) {
-        docker.networks((result :any) :void =>
+        docker.networks((result :Record<string,any>) :void =>
             callback(
                 result.map((container :any) => ({
                     key: container['Id'],
@@ -196,7 +196,7 @@ function get_networks_tables(docker :DockerModel) {
 
 function get_volumes_tables(docker :DockerModel) {
     return function (callback :Receiver) {
-        docker.volumes((result :any) :void =>
+        docker.volumes((result :Record<string,any>) :void =>
             callback(
                 result['Volumes']?.map((volume :any) => ({
                     key: volume['Name'],
@@ -218,7 +218,7 @@ function get_volumes_tables(docker :DockerModel) {
 
 function get_containers_tables(docker :DockerModel) {
     return function (callback :Receiver) {
-        docker.containers((result :any) :void =>
+        docker.containers((result :Record<string,any>) :void =>
             callback(
                 result.map((container :any) => ({
                     key: container['Id'],

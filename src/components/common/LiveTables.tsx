@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Table from './Table';
-import {Getter, useTimeoutGet} from './useTimeoutGet';
+import {Getter, useTimeoutGet} from '../../hooks/useTimeoutGet';
 
 type Props = {
     check :Getter,
@@ -14,7 +14,7 @@ type RowGroup = {
 }
 
 export default
-function LiveTable({check, ms} :Props) {
+function LiveTables({check, ms} :Props) {
 
     const rowGroups :RowGroup[] = useTimeoutGet(check, ms);
 

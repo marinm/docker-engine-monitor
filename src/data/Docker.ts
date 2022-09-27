@@ -1,4 +1,4 @@
-import {Receiver, Getter} from '../components/useTimeoutGet.js';
+import {Receiver, Getter} from '../hooks/useTimeoutGet.js';
 
 type DockerModel = {
     ping       : Getter;
@@ -29,7 +29,7 @@ function Docker(host :string, port :string, apiVersion :string) :DockerModel  {
         .catch(error => receiver(null));
     };
 
-    function getterFunction(path :string) {
+    function getterFunction(path :string) :Getter {
         return (receiver :Receiver) => get(path, receiver);
     }
 

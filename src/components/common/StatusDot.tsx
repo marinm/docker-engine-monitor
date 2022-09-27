@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useTimeoutGet} from './useTimeoutGet';
+import {useTimeoutGet} from '../../hooks/useTimeoutGet';
 
 type Receiver = (data: any) => void;
 type Getter = (callback :Receiver) => void;

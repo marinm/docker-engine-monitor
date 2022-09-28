@@ -1,11 +1,11 @@
 .App {
-    font-size: 1rem;
-    font-family: 'Verdana';
-    border: 1px solid #ccc;
-    width: 40em;
-    box-sizing: border-box;
-    margin: auto;
-    border-radius: 0.5em;
-    overflow: hidden;
-    box-shadow: 0 0 0.4em 0.2em #ddd;
+  font-size: 1rem;
+  font-family: "Verdana";
+  border: 1px solid #ccc;
+  width: 40em;
+  box-sizing: border-box;
+  margin: auto;
+  border-radius: 0.5em;
+  overflow: hidden;
+  box-shadow: 0 0 0.4em 0.2em #ddd;
 }

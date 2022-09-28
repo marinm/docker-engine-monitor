@@ -1,23 +1,24 @@
 table {
-    table-layout: fixed;
-    border-collapse: collapse;
-    margin: 0;
-    font-size: 1rem;
-    width: 100%;
-    box-sizing: border-box;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin: 0;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 tbody {
-    border-top: 3px solid #AAAAAA;
+  border-top: 3px solid #aaaaaa;
 }
 
-td, th {
-    padding: 0.4em;
-    border-bottom: 1px solid #EEEEEE;
-    width: 20em;
+td,
+th {
+  padding: 0.4em;
+  border-bottom: 1px solid #eeeeee;
+  width: 20em;
 }
 
 th.table-title {
-    text-align: left;
-    background-color: #EEEEEE;
+  text-align: left;
+  background-color: #eeeeee;
 }

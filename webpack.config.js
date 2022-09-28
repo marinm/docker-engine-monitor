@@ -1,7 +1,7 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
   test: /\.tsx?$/,
   exclude: /node_modules/,
-  loader: 'ts-loader'
+  loader: "ts-loader",
 };

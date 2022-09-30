@@ -2,7 +2,11 @@
 
 ## About
 
-Browser client to the [Docker Engine API](https://docs.docker.com/engine/api) (v1.41).
+GUI client to the [Docker Engine API](https://docs.docker.com/engine/api) (v1.41).
+
+### Project Template
+
+[electron-react-boilerplate](https://github.com/electron-react-boilerplate/electron-react-boilerplate)
 
 ## Screenshot
 

@@ -28,9 +28,15 @@ This monitor is a TCP client.
 
 See `src/config.js`.
 
-_By default the Docker daemon (`dockerd`) binds to a Unix-domain socket for serving the HTTP-based API. But Docker can also be configured to have the daemon bind to a TCP port instead. Look for the socket option on the `dockerd` [reference page](https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-socket-option)._
+For a quick start, set up the socket converter at:
 
-I had trouble with the former approach, and didn't want to bother to figure it out. A quick hack is to write a proxy script that reads from the Unix-domain socket, binds to a TCP port, and passes messages in both directions. You will have to do this on your own. 🍉
+[marinm/docker-engine-api-forward](git@github.com:marinm/docker-engine-api-forward.git)
+
+
+
+_By default the Docker daemon (`dockerd`) binds to a Unix-domain socket for serving the HTTP-based API. But Docker can also be configured to have the daemon bind to a TCP port instead. Look for the socket option on the `dockerd` [reference page](https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-socket-option). This setup didn't work for me so I wrote the socket converter referenced above._
+
+_TODO: Since this app now runs on Node/Electron, it can directly access the default `dockerd` socket._
 
 ### Starting the monitor
 

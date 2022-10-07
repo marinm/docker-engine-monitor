@@ -18,10 +18,10 @@ export default function Table({ title, rows }: Props) {
       </thead>
 
       <tbody>
-        {rows?.map((entry) => (
-          <tr key={String(entry[0])}>
-            <td>{String(entry[0])}</td>
-            <td>{entry[1]}</td>
+        {rows?.map(([title, value]) => (
+          <tr key={String(title)}>
+            <td>{String(title)}</td>
+            <td>{value}</td>
           </tr>
         ))}
       </tbody>

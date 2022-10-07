@@ -1,7 +1,7 @@
 import { Receiver, Getter } from "../hooks/useTimeoutGet";
 import { DockerModel } from "../data/Docker";
 
-function get_platform_table(docker: DockerModel): Getter {
+function getPlatformTable(docker: DockerModel): Getter {
   return function (callback: Receiver) {
     docker.version((result: Record<string, any>) =>
       callback([
@@ -20,7 +20,7 @@ function get_platform_table(docker: DockerModel): Getter {
   };
 }
 
-function get_docker_engine_table(docker: DockerModel): Getter {
+function getDockerEngineTable(docker: DockerModel): Getter {
   // The version.Components array is not necessarily guaranteed to be in the
   // same order...
 
@@ -48,7 +48,7 @@ function get_docker_engine_table(docker: DockerModel): Getter {
   };
 }
 
-function get_containerd_table(docker: DockerModel) {
+function getContaineredTable(docker: DockerModel) {
   return function (callback: Receiver) {
     docker.version((result: Record<string, any>) =>
       callback([
@@ -59,7 +59,7 @@ function get_containerd_table(docker: DockerModel) {
   };
 }
 
-function get_runc_table(docker: DockerModel) {
+function getRuncTable(docker: DockerModel) {
   return function (callback: Receiver) {
     docker.version((result: Record<string, any>) =>
       callback([
@@ -70,7 +70,7 @@ function get_runc_table(docker: DockerModel) {
   };
 }
 
-function get_docker_init_table(docker: DockerModel) {
+function getDockerInitTable(docker: DockerModel) {
   return function (callback: Receiver) {
     docker.version((result: Record<string, any>) =>
       callback([
@@ -81,7 +81,7 @@ function get_docker_init_table(docker: DockerModel) {
   };
 }
 
-function get_info_table(docker: DockerModel) {
+function getInfoTable(docker: DockerModel) {
   return function (callback: Receiver) {
     docker.info((result: Record<string, any>) =>
       callback([
@@ -149,7 +149,7 @@ function get_info_table(docker: DockerModel) {
   };
 }
 
-function get_images_tables(docker: DockerModel) {
+function getImagesTables(docker: DockerModel) {
   return function (callback: Receiver) {
     docker.images((result: Record<string, any>) =>
       callback(
@@ -171,11 +171,11 @@ function get_images_tables(docker: DockerModel) {
   };
 }
 
-function get_config_table(config: any): [string, string][] {
+function getConfigTable(config: any): [string, string][] {
   return Object.keys(config).map((key) => [key, config[key]]);
 }
 
-function get_networks_tables(docker: DockerModel) {
+function getNetworksTables(docker: DockerModel) {
   return function (callback: Receiver) {
     docker.networks((result: Record<string, any>): void =>
       callback(
@@ -202,7 +202,7 @@ function get_networks_tables(docker: DockerModel) {
   };
 }
 
-function get_volumes_tables(docker: DockerModel) {
+function getVolumesTables(docker: DockerModel) {
   return function (callback: Receiver) {
     docker.volumes((result: Record<string, any>): void =>
       callback(
@@ -224,7 +224,7 @@ function get_volumes_tables(docker: DockerModel) {
   };
 }
 
-function get_containers_tables(docker: DockerModel) {
+function getContainersTables(docker: DockerModel) {
   return function (callback: Receiver) {
     docker.containers((result: Record<string, any>): void =>
       callback(
@@ -245,18 +245,16 @@ function get_containers_tables(docker: DockerModel) {
   };
 }
 
-const tables = {
-  get_platform_table,
-  get_docker_engine_table,
-  get_containerd_table,
-  get_runc_table,
-  get_docker_init_table,
-  get_info_table,
-  get_images_tables,
-  get_config_table,
-  get_networks_tables,
-  get_volumes_tables,
-  get_containers_tables,
+export {
+  getPlatformTable,
+  getDockerEngineTable,
+  getContaineredTable,
+  getRuncTable,
+  getDockerInitTable,
+  getInfoTable,
+  getImagesTables,
+  getConfigTable,
+  getNetworksTables,
+  getVolumesTables,
+  getContainersTables,
 };
-
-export default tables;

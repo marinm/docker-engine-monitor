@@ -2,7 +2,8 @@ import "../../css/Header.css";
 import * as React from "react";
 
 type Props = {
-  panelSwitch: any;
+  panelName: string;
+  setPanelName(value: string): void;
 };
 
 const panels = [
@@ -14,9 +15,7 @@ const panels = [
   ["images", "Images"],
 ];
 
-export default function Header({ panelSwitch }: Props) {
-  const [panelName, setPanelName]: [string, any] = panelSwitch;
-
+export default function Header({ panelName, setPanelName }: Props) {
   function selected(name: string) {
     return name === panelName ? "selected" : "";
   }

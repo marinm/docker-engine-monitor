@@ -2,15 +2,15 @@ import * as React from "react";
 import Table from "./Table";
 import { Getter, useTimeoutGet } from "../../hooks/useTimeoutGet";
 
-type Props = {
-  check: Getter;
-  ms: number;
-};
-
 type RowGroup = {
   key: string;
   title: string;
   rows: [string, string][];
+};
+
+type Props = {
+  check: Getter;
+  ms: number;
 };
 
 export default function LiveTables({ check, ms }: Props) {

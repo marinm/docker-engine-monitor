@@ -25,7 +25,7 @@ function Docker(host: string, port: string, apiVersion: string): DockerModel {
     fetch(`${urlBase}${path}`)
       .then((response) => response.json())
       .then((data: any) => receiver(data))
-      .catch((error) => receiver(null));
+      .catch((_) => receiver(null));
   }
 
   function getterFunction(path: string): Getter {

@@ -18,7 +18,13 @@ function useTimeoutGet(get: Getter, ms: number): any {
     // data won't be null, so wait until the next refresh. If the fetch
     // returns null, this will short-circuit the re-rendering.
     // Don't let your check() call back with a null >:(
-    const timerID = data === null ? (tick(), null) : setTimeout(tick, ms);
+    let timerID: NodeJS.Timeout;
+    if (data === null) {
+      tick(), null;
+    } else {
+      timerID = setTimeout(tick, ms);
+    }
+
     return () => clearTimeout(timerID);
   });
 

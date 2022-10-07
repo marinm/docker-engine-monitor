@@ -8,12 +8,10 @@ import VolumesPanel from "./panels/VolumesPanel";
 import ImagesPanel from "./panels/ImagesPanel";
 
 type Props = {
-  panelSwitch: any;
+  panelName: string;
 };
 
-export default function Body({ panelSwitch }: Props) {
-  const [panelName]: [string] = panelSwitch;
-
+export default function Body({ panelName }: Props) {
   const components: any = {
     monitor: <MonitorPanel />,
     engine: <EnginePanel />,
